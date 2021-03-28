@@ -3,8 +3,12 @@ import $ from "jquery";
 import React from 'react'
 import { idText } from 'typescript';
 
-export const Card: React.FC<PostType> = ({owner, text, image}) => {
-    const handleClick = (event:any) => {        
+export const Card: React.FC<PostType> = ({owner, text, image, publishDate}) => {
+    const handleClick = (event:any) => { 
+        $(`#card-owner-${owner.id}`).css({
+            
+        });
+        
         $(`#${owner.id}`).css({
             height: "auto"
         });
@@ -46,26 +50,28 @@ export const Card: React.FC<PostType> = ({owner, text, image}) => {
         });
     }
     return (
-        <div className="card">
+        <div className="card" id={`card-owner-${owner.id}`}>
             <div className="card-header">
                 <img src={owner.picture} alt="User Image"/>
                 <h3>{owner.firstName} {owner.lastName}</h3>
             </div>
+            <hr/>
             <div className="card-body">
                 <p>
-                    {text}
+                    {text} 
                 </p>
             </div>
-            <div className="expander" id={owner.id}>
+            <div className="expander" id={`${owner.id}`}>
                 <img src={image} alt="Post Image"/>
                 <div className="card-body-full" id={`card-body-full-${owner.id}`}>
                     <p>
-                        {text}
+                        {text} 
                     </p>
                 </div>
             </div>
             <div className="card-footer">
-                <a href="#" onClick={handleClick} id={`show-more-${owner.id}`} className="show-more">...Show more</a>
+                {publishDate.substr(0, 10)}
+                <a href="#" onClick={handleClick} id={`show-more-${owner.id}`} className="show-more"><strong>... Show post</strong></a>
                 <br/>
                 <a href="#"  onClick={handleClose} id={`show-less-${owner.id}`} className="show-less">^</a>
             </div>                    

@@ -21,6 +21,9 @@ export const tReducer = (state:userPost = initialState, action: any) => {
         case "SCROLL_DOWN":
             return {...state, limit: state.limit + action.payload}
         break;
+        case "SET_LIMIT":
+            return {...state, limit: action.payload}
+        break;
         default: 
         return state;
     }
