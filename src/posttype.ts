@@ -6,5 +6,5 @@ export type PostType = {
     link: string,
     tags: string[],
     publishDate: string,
-    owner: UserType    
+    owner: UserType   
 }

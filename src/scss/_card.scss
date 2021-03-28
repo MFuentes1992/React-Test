@@ -3,10 +3,11 @@
 .card{
     position: relative;
     width: $cardWidth;
+    height: $cardHeight;
     background-color: $cardColor;    
     margin: 10px;
     border-radius: 5px;
-    border-top: 2px solid $lineSecondColor;
+    border-top: 5px solid $lineSecondColor;
 }
 
 .card-header{
@@ -30,8 +31,7 @@
 .expander{
     position: relative;
     width: 100%; 
-    height: 0px;   
-    margin: auto;
+    height: 0px;       
     img{
         width: 100%;  
         height: 0px;      

@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {userPost} from './tReducer';
 import './scss/app.scss';
+import {findDOMNode} from 'react-dom';
+import $ from "jquery";
 import {Card} from './components/card';
 import {getPosts} from './API';
 import {loadPosts, incrementLimit} from './actions';
@@ -34,7 +36,8 @@ function App() {
     } );
     dispatch(loadPosts(auxPost)); // Load only the matching posts.
   }
-    //-- React hook, trigger when Limit is updated.
+
+  //-- React hook, trigger when Limit is updated.
   useEffect(() => {
     const loadUsers = async () => {
     // setLoading(true); -> Change to Redux      
@@ -53,7 +56,7 @@ function App() {
       <SearchBar searchKeyword={handleClick} />
       <div className="container" onScroll={scrollHandler}>&nbsp;
         { posts.map( (post)=>{
-          return <Card key={post.owner.id}  owner={post.owner} text={post.text} image={post.image} likes={post.likes} link={post.link} tags={post.tags} publishDate={post.publishDate} ></Card>
+          return <Card key={post.publishDate}  owner={post.owner} text={post.text} image={post.image} likes={post.likes} link={post.link} tags={post.tags} publishDate={post.publishDate} ></Card>
         } ) 
         }
       </div>
