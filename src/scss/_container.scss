@@ -1,0 +1,11 @@
+@import "./variables";
+
+.container{
+    overflow: auto;
+    width: $appWidth; 
+    height: $appHeight;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

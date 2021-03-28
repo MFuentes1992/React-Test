@@ -1,0 +1,76 @@
+@import "./variables";
+
+.card{
+    position: relative;
+    width: $cardWidth;
+    background-color: $cardColor;    
+    margin: 10px;
+    border-radius: 5px;
+    border-top: 2px solid $lineSecondColor;
+}
+
+.card-header{
+    position: relative;
+    display: flex;
+    margin: 5px;
+    img{
+        border-radius: 50%;
+    }
+}
+
+.card-body{
+    p{
+        width: 10em;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+}
+
+.expander{
+    position: relative;
+    width: 100%; 
+    height: 0px;   
+    margin: auto;
+    img{
+        width: 100%;  
+        height: 0px;      
+    }
+}
+
+.card-body-full{
+    position: relative;
+    width: 100%;
+    height: 0px;
+    overflow: hidden;
+    background-color: $linePrimaryColor;
+    color: $baseColor;
+}
+
+.card-footer{
+    position: absolute;
+    margin: auto;
+    width: 100%;
+    height: 50px;
+    background-color: $linePrimaryColor;
+    color: $baseColor;
+    bottom: 0;
+    border-radius: 0px 0px 5px 5px;
+}
+
+.show-more{
+    position: relative;
+    color: $baseColor;
+    text-decoration: none;
+    float: right;
+    margin-right: 15px;
+}
+
+.show-less{
+    position: relative;
+    color: $baseColor;
+    text-decoration: none;
+    float: right;
+    margin-right: 15px;
+    visibility: hidden;
+}
